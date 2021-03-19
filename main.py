@@ -5,7 +5,6 @@ import warnings
 warnings.filterwarnings('ignore')
 
 import streamlit as st
-import pickle
 
 df = pd.read_csv('homeprices.csv')
 df.head()
@@ -22,8 +21,7 @@ model.fit(x,y)
 predict = model.predict(x)
 r2_score(y,predict)
 
-
-
+#make pickle file
 import pickle 
 pickle_out = open("regression.pkl", mode = "wb") 
 pickle.dump(model, pickle_out) 
