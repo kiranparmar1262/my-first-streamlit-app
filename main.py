@@ -39,34 +39,47 @@ classifier = pickle.load(pickle_in)
 def prediction(area):   
  
     # Pre-processing user input      
-    Area = area
     # Making predictions 
-    prediction = classifier.predict([[Area]])
+    prediction = classifier.predict([[area]])
     return prediction
   
 # this is the main function in which we define our webpage  
 def main():       
     # front end elements of the web page 
     html_temp = """ 
-    <div style ="background-color:black;padding:13px">
-    <h1 style ="color:white;text-align:center;">My First Streamlit ML App</h1> 
+    <div style ="background-color:Yellow;padding:8px;border-radius:30px;text-align:center">
+    <h1 style ="color:black">House Price Prediction ML App</h1> 
     </div> 
+    <br/>
     """
-      
+    
+    page_bg_img = '''
+
+    <style>
+    body {
+    
+    background-image: url("https://image.freepik.com/free-photo/abstract-black-white-bokeh-background_1962-1324.jpg");
+    background-size: cover;
+    }
+    </style>
+    '''
+    
+   
+    #st.image('houseprice.jpg')  
     # display the front end aspect
-    st.markdown(html_temp, unsafe_allow_html = True) 
-      
+    st.markdown(html_temp, unsafe_allow_html = True)   
     # following lines create boxes in which user can enter data required to make prediction 
     
 #     Gender = st.selectbox('Gender',("Male","Female"))      this is for drop down box
 #     Married = st.selectbox('Marital Status',("Unmarried","Married")) 
-    Area = st.number_input("Area") 
+    area = st.number_input("Area") 
     result = ""
       
     # when 'Predict' is clicked, make the prediction and store it 
     if st.button("Predict"):
-        result = prediction(Area)
-        st.success('Your Area By Area is {}'.format(result))
+        result = prediction(area)
+        st.success('House Price is {}'.format(result))
      
 if __name__=='__main__': 
     main()
+
