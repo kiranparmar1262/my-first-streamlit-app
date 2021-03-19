@@ -23,7 +23,7 @@ r2_score(y,predict)
 
 #make pickle file
 import pickle 
-pickle_out = open("regression.pkl", mode = "wb") 
+pickle_out = open('regression.pkl','wb') 
 pickle.dump(model, pickle_out) 
 pickle_out.close()
 
