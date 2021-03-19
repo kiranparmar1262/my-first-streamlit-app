@@ -7,7 +7,7 @@ warnings.filterwarnings('ignore')
 import streamlit as st
 import pickle
 
-df = pd.read_csv('C:/Users/LENOVO/Data Science/Machine Learning/homeprices.csv')
+df = pd.read_csv('homeprices.csv')
 df.head()
 
 x = df.iloc[:,:1]
