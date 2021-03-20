@@ -49,7 +49,7 @@ def main():
     # when 'Predict' is clicked, make the prediction and store it 
     if st.button("Predict"):
         result = prediction(area)
-        st.success('House Price is {}'.format(result))
+        st.success('House Price is {}'.format(result[0]))
      
 if __name__=='__main__': 
     main()
